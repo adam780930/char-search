@@ -1,8 +1,13 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import Mainpage from "./mainpage/Mainpage";
+
 function App() {
   return (
-    <div>
-      <button type="button" class="btn btn-primary">Primary</button>
-    </div>
+    <BrowserRouter>
+     <Routes>
+       <Route path="/" element={<Mainpage />} />
+     </Routes>
+   </BrowserRouter>
   );
 }
 
