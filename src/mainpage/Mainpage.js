@@ -1,4 +1,8 @@
+import React, { useState, useEffect } from "react";
+
 function Mainpage() {
+  const [retrievedData, setRetrievedData] = useState([]);
+
   const testObject = [
     { title: "test title 1", content: "...1" },
     { title: "test title 2", content: "...2" },
@@ -7,19 +11,26 @@ function Mainpage() {
     { title: "test title 5", content: "...5" },
     { title: "test title 6", content: "...6" },
   ];
-  let charInfo =[];
-  const getInfo = async () => {
-    await fetch(`https://genshin.jmp.blue/characters/amber`)
+
+  useEffect(() => {
+    fetch(`https://genshin.jmp.blue/characters/amber`)
       .then((result) => result.json())
       .then((data) => {
-        charInfo.push(data);
-        console.log("test", charInfo[0]);
+        setRetrievedData([data]);
+        console.log(data);
       });
-    console.log("test2", charInfo);
-  };
+  }, []);
 
-  getInfo();
-  console.log(charInfo[0]);
+  //   const getInfo = async () => {
+  //     await fetch(`https://genshin.jmp.blue/characters/amber`)
+  //       .then((result) => result.json())
+  //       .then((data) => {
+  //         setRetrievedData(data);
+  //         console.log(data)
+  //       });
+  //   };
+
+  //   getInfo();
 
   return (
     // <div>
@@ -31,7 +42,7 @@ function Mainpage() {
     // </div>
     <div class="container">
       <div class="row">
-        {testObject.map((el) => (
+        {retrievedData.map((el) => (
           <div class="text-center border border-primary m-1 p-1 col-2">
             <p class="h4 bg-primary">{el.name}</p>
             <p class="h4">{el.vision}</p>
