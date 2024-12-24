@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import DropDownMenu from "../dropdown-menu/Dropdown-menu";
 
 function Mainpage() {
   const [retrievedData, setRetrievedData] = useState([]);
+  const [characterData, setCharacterData] = useState([]);
 
   const testObject = [
     { title: "test title 1", content: "...1" },
@@ -16,14 +18,17 @@ function Mainpage() {
     return Object.keys(object).find((key) => object[key] === value);
   }
 
+ 
+
   useEffect(() => {
-    fetch(`https://genshin.jmp.blue/characters/amber`)
+    fetch(`https://genshin.jmp.blue/characters`)
       .then((result) => result.json())
       .then((data) => {
-        setRetrievedData([data]);
-        console.log(data);
+        setRetrievedData(data);
       });
   }, []);
+
+  //   console.log(retrievedData);
 
   return (
     <div class="container">
@@ -39,6 +44,7 @@ function Mainpage() {
           </div>
         ))}
       </div>
+      <DropDownMenu characterList={retrievedData} />
     </div>
   );
 }
