@@ -18,8 +18,6 @@ function Mainpage() {
     return Object.keys(object).find((key) => object[key] === value);
   }
 
- 
-
   useEffect(() => {
     fetch(`https://genshin.jmp.blue/characters`)
       .then((result) => result.json())
@@ -27,8 +25,6 @@ function Mainpage() {
         setRetrievedData(data);
       });
   }, []);
-
-  //   console.log(retrievedData);
 
   return (
     <div class="container">

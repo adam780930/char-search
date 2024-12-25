@@ -18,7 +18,7 @@ function DropDownMenu({ characterList }) {
         <option value="">Open this select menu</option>
         {characterList.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {option.charAt(0).toUpperCase() + option.substr(1)}
           </option>
         ))}
       </select>
