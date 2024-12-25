@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-function DropDownMenu({ characterList }) {
+function DropDownMenu({ characterList, onCharacterChange }) {
   const [selectedValue, setSelectedValue] = useState("");
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+    onCharacterChange(event.target.value)
+    setSelectedValue(event.target.value)
+    console.log(event.target.value)
+    console.log("this is selected value:" + selectedValue)
   };
 
   return (
@@ -23,7 +26,7 @@ function DropDownMenu({ characterList }) {
         ))}
       </select>
 
-      {selectedValue && <p>Selected value: {selectedValue}</p>}
+      
     </div>
   );
 }
