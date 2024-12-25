@@ -24,6 +24,8 @@ function Mainpage() {
     fetch(`https://genshin.jmp.blue/characters/${data}`)
       .then((result) => result.json())
       .then((data) => {
+
+        console.log(data)
         setfetchedCharacter([data]);
       });
   };
@@ -32,13 +34,51 @@ function Mainpage() {
     <div class="container">
       <div class="row">
         {fetchedCharacter.map((el) => (
-          <div class="text-center border border-primary m-1 p-1 col-2">
-            <p class="h4 bg-primary">{getKeyByValue(el, el.name)}</p>
-            <p class="h4">{el.name}</p>
-            <p class="h4">{el.vision}</p>
-            <p class="h4">{el.vision}</p>
-            <p class="h4">{el.vision}</p>
-            <p class="h4">{el.vision}</p>
+          <div>
+            <div class="container row">
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.name)}</p>
+                <p class="h4">{el.name}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.vision)}</p>
+                <p class="h4">{el.vision}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.weapon)}</p>
+                <p class="h4">{el.weapon}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.nation)}</p>
+                <p class="h4">{el.nation}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.affiliation)}</p>
+                <p class="h4">{el.affiliation}</p>
+              </div>
+            </div>
+            <div class="container row">
+            <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.birthday)}</p>
+                <p class="h4">{el.birthday}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.release)}</p>
+                <p class="h4">{el.release}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.rarity)}</p>
+                <p class="h4">{el.rarity}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.title)}</p>
+                <p class="h4">{el.title}</p>
+              </div>
+              <div class="text-center border border-primary m-1 p-1 col-2">
+                <p class="h4 bg-primary">{getKeyByValue(el, el.constellation)}</p>
+                <p class="h4">{el.constellation}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
