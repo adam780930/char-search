@@ -6,8 +6,6 @@ function DropDownMenu({ characterList, onCharacterChange }) {
   const handleChange = (event) => {
     onCharacterChange(event.target.value)
     setSelectedValue(event.target.value)
-    console.log(event.target.value)
-    console.log("this is selected value:" + selectedValue)
   };
 
   return (

@@ -3,7 +3,6 @@ import DropDownMenu from "../dropdown-menu/Dropdown-menu";
 
 function Mainpage() {
   const [retrievedData, setRetrievedData] = useState([]);
-  const [characterData, setCharacterData] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState("");
   const [fetchedCharacter, setfetchedCharacter] = useState([]);
 
