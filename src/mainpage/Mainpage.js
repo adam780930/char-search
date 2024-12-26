@@ -23,8 +23,6 @@ function Mainpage() {
     fetch(`https://genshin.jmp.blue/characters/${char}`)
       .then((result) => result.json())
       .then((data) => {
-
-        console.log(data)
         setfetchedCharacter([data]);
       });
   };
@@ -91,12 +89,3 @@ function Mainpage() {
 }
 
 export default Mainpage;
-
-//   const testObject = [
-//     { title: "test title 1", content: "...1" },
-//     { title: "test title 2", content: "...2" },
-//     { title: "test title 3", content: "...3" },
-//     { title: "test title 4", content: "...4" },
-//     { title: "test title 5", content: "...5" },
-//     { title: "test title 6", content: "...6" },
-//   ];
