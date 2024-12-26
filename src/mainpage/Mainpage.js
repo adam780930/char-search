@@ -19,9 +19,9 @@ function Mainpage() {
       });
   }, []);
 
-  const handleSelectedCharacter = (data) => {
-    setSelectedCharacter(data);
-    fetch(`https://genshin.jmp.blue/characters/${data}`)
+  const handleSelectedCharacter = (char) => {
+    setSelectedCharacter(char);
+    fetch(`https://genshin.jmp.blue/characters/${char}`)
       .then((result) => result.json())
       .then((data) => {
 
